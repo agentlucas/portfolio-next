@@ -82,24 +82,26 @@ export default function Home() {
             reliability, and measurable business impact.
           </p>
 
-          <nav className="mt-8 space-y-2">
-            {navItems.map((item) => (
-              <a
+          <nav className="mt-8 grid grid-cols-2 gap-2">
+            {navItems.map((item, idx) => (
+              <motion.a
                 key={item.href}
                 href={item.href}
-                className="block text-sm text-slate-400 transition hover:text-cyan-200"
+                whileHover={{ y: -2 }}
+                className="group flex items-center gap-2 rounded-md border border-white/10 bg-slate-900/40 px-3 py-2 text-sm text-slate-300 transition hover:border-cyan-300/50 hover:text-cyan-200"
               >
-                {item.label}
-              </a>
+                <span className="text-[10px] text-cyan-300/80">0{idx + 1}</span>
+                <span>{item.label}</span>
+              </motion.a>
             ))}
           </nav>
 
-          <div className="mt-8 flex gap-3 text-sm">
+          <div className="mt-8 flex flex-wrap gap-2 text-sm">
             <a
               href="https://github.com/gadanihiman"
               target="_blank"
               rel="noreferrer"
-              className="text-slate-400 hover:text-cyan-200"
+              className="rounded-full border border-white/15 px-3 py-1 text-slate-300 hover:border-cyan-300/50 hover:text-cyan-200"
             >
               GitHub
             </a>
@@ -107,13 +109,13 @@ export default function Home() {
               href="https://linkedin.com/in/gadanihiman"
               target="_blank"
               rel="noreferrer"
-              className="text-slate-400 hover:text-cyan-200"
+              className="rounded-full border border-white/15 px-3 py-1 text-slate-300 hover:border-cyan-300/50 hover:text-cyan-200"
             >
               LinkedIn
             </a>
             <a
               href="mailto:gadanihiman@gmail.com"
-              className="text-slate-400 hover:text-cyan-200"
+              className="rounded-full border border-white/15 px-3 py-1 text-slate-300 hover:border-cyan-300/50 hover:text-cyan-200"
             >
               Email
             </a>
